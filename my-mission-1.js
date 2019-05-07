@@ -2,12 +2,16 @@
 
 // Import the LitElement base class and html helper function
 import { LitElement, html, css } from 'lit-element'
+import { cssCommun } from './cssCommun'
+// import { css } from 'lit-element'
+
 // import { LitElement, html } from '@polymer/lit-element';
 
+
 const styles = css`
-:host {
-    display: block;
-}
+  ${cssCommun}
+  :host {
+  }
 `
 
 class MyMission1 extends LitElement {
@@ -17,6 +21,7 @@ class MyMission1 extends LitElement {
       `
     } else if (this.code === 'succes') {
       return html`
+        <h1>Bien joué!</h1>
         <div>
           La première victime est un pélican qui est emprisonné dans une maison de barbie.
         </div>

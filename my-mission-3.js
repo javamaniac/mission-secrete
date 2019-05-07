@@ -2,12 +2,13 @@
 
 // Import the LitElement base class and html helper function
 import { LitElement, html, css } from 'lit-element'
+import { cssCommun } from './cssCommun'
 // import { LitElement, html } from '@polymer/lit-element';
 
 const styles = css`
-:host {
-    display: block;
-}
+  ${cssCommun}
+  :host {
+  }
 `
 
 class MyMission3 extends LitElement {
@@ -17,6 +18,14 @@ class MyMission3 extends LitElement {
       `
     } else if (this.code === 'succes') {
       return html`
+      <h1>Bien joué!</h1>
+      <div>
+        La victime #3 se trouve justement dans ce masque.
+      </div>
+      <form>
+          Code pour la suite <input type="text">
+          <input type="submit" @click=${this.suite} value="Valider">
+        </form>      
       `
     } else {
       return html`
@@ -27,7 +36,7 @@ class MyMission3 extends LitElement {
         </div>
         <form>
           Réponse <input type="text">
-          <input type="submit" @click=${this.suite} value="Valider">
+          <input type="submit" @click=${this.validerReponse} value="Valider">
         </form>
       `
     }
@@ -35,7 +44,7 @@ class MyMission3 extends LitElement {
 
   validerReponse () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'kidnapping') {
+    if (value.toLocaleLowerCase().trim() === 'masque africain') {
       this.code = 'succes'
     } else {
       alert('Pénalité : -2 min')
@@ -44,8 +53,8 @@ class MyMission3 extends LitElement {
 
   suite () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === '8729') {
-      document.location = '#my-mission2'
+    if (value.toLocaleLowerCase().trim() === 'épée') {
+      document.location = '#my-mission4'
     } else {
       // alert('Pénalité : -2 min')
     }

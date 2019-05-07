@@ -6,10 +6,16 @@ import { } from './my-mission-1'
 import { } from './my-mission-2'
 import { } from './my-mission-3'
 import { } from './my-mission-4'
+import { } from './my-mission-5'
+import { } from './my-mission-6'
 
 const styles = css`
 :host {
     display: block;
+}
+h3 {
+  text-align: center;
+  margin: 0;
 }
 
 `

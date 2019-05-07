@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-old": "python -m SimpleHTTPServer 8080",
-    "start-bureau": "polymer serve --port 3389 --hostname 10.45.53.55",
+    "bureau": "polymer serve --port 3389 --hostname 10.45.53.55",
     "start": "polymer serve --port 3389 --hostname 192.168.0.61"
   },
   "author": "",

@@ -2,12 +2,13 @@
 
 // Import the LitElement base class and html helper function
 import { LitElement, html, css } from 'lit-element'
+import { cssCommun } from './cssCommun'
 // import { LitElement, html } from '@polymer/lit-element';
 
 const styles = css`
-:host {
-    display: block;
-}
+  ${cssCommun}
+  :host {
+  }
 `
 
 class MyMission4 extends LitElement {
@@ -17,22 +18,26 @@ class MyMission4 extends LitElement {
       `
     } else if (this.code === 'succes') {
       return html`
-        <div>
-          La première victime est un pélican qui est emprisonné dans une maison de barbie.
-        </div>
-        <form>
+      <h1>Bien joué!</h1>
+      <div>
+        La victime #5 est un serpent qui peut faire peur au postier.
+      </div>
+      <form>
           Code pour la suite <input type="text">
           <input type="submit" @click=${this.suite} value="Valider">
-        </form>
+        </form>      
       `
     } else {
       return html`
         <h1>Mission 4</h1>
         <div>
-            <p>Avec cette boîte de dés.</p>
-            <p>Si on brasse tous ces dés, et qu’on fait la somme des dés, </p>
-            <p>Quel est le plus petit nombre qu’on peut obtenir?</p>
-            <p>Quel est le plus grand nombre qu’on peut obtenir?</p>
+            <p>Mettre dans l’ordre d’invention</p>
+
+<div>1 - Le conte de Blanche Neige</div>
+<div>2 - Le conte de Cendrillon</div>
+<div>3 - Alice au pays des Merveilles</div>
+<div>4 - La Fable Le Corbeau et le renard</div>
+
         </div>
         <form>
           Réponse <input type="text">
@@ -44,7 +49,7 @@ class MyMission4 extends LitElement {
 
   validerReponse () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'kidnapping') {
+    if (value.toLocaleLowerCase().trim() === '4213') {
       this.code = 'succes'
     } else {
       alert('Pénalité : -2 min')
@@ -53,8 +58,8 @@ class MyMission4 extends LitElement {
 
   suite () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'chien') {
-      document.location = '#my-mission2'
+    if (value.toLocaleLowerCase().trim() === 'souffrance') {
+      document.location = '#my-mission5'
     } else {
       // alert('Pénalité : -2 min')
     }

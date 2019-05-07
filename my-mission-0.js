@@ -8,6 +8,14 @@ const styles = css`
 :host {
     display: block;
 }
+input {
+  display: block;
+  font-size: 21px;
+  font-family: 'IM Fell English SC', serif;
+  background: transparent;
+  border: 2px solid #2f0404;
+  padding: 5px 10px;
+}
 `
 
 class MyMission0 extends LitElement {
@@ -35,7 +43,8 @@ class MyMission0 extends LitElement {
             <p>Mon tout est ce qui est arrivé à ceux que vous cherchez.</p>
         </div>
         <form>
-          Réponse <input type="text">
+          Réponse 
+          <input type="text">
           <input type="submit" @click=${this.validerReponse} value="Valider">
         </form>
       `
