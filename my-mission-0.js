@@ -1,72 +1,36 @@
 // plugin : lit-html, es6-string-css
 
-// Import the LitElement base class and html helper function
 import { LitElement, html, css } from 'lit-element'
-// import { LitElement, html } from '@polymer/lit-element';
+import { cssCommun } from './cssCommun'
 
 const styles = css`
-:host {
-    display: block;
-}
-input {
-  display: block;
-  font-size: 21px;
-  font-family: 'IM Fell English SC', serif;
-  background: transparent;
-  border: 2px solid #2f0404;
-  padding: 5px 10px;
-}
+  ${cssCommun}
+  :host {
+  }
 `
 
 class MyMission0 extends LitElement {
   render () {
-    if (this.code === 1) {
-      return html`
-      `
-    } else if (this.code === 'succes') {
-      return html`
-        <div>
-          La première victime est un pélican qui est emprisonné dans une maison de barbie.
-        </div>
-        <form>
-          Code pour la suite <input type="text">
-          <input type="submit" @click=${this.suite} value="Valider">
-        </form>
-      `
-    } else {
-      return html`
-        <h1>Mission 1</h1>
-        <div>
-            <p>Mon premier est le dernier mot du nom du célèbre hors-la-loi. Son nom commence par “Billy The ___”.</p>
-            <p>Mon second est la traduction du mot sieste en anglais.</p>
-            <p>Mon troisième est la dernière syllabe de l’activité que Alizée fait avec ses grands parents à chaque été.</p>
-            <p>Mon tout est ce qui est arrivé à ceux que vous cherchez.</p>
-        </div>
-        <form>
-          Réponse 
-          <input type="text">
-          <input type="submit" @click=${this.validerReponse} value="Valider">
-        </form>
-      `
-    }
-  }
-
-  validerReponse () {
-    const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'kidnapping') {
-      this.code = 'succes'
-    } else {
-      alert('Pénalité : -2 min')
-    }
+    return html`
+      <h1></h1>
+      <div>
+          <h1>À l'aide!</h1>
+          <img src="images/savantFou.png" align="right">
+          <p>Un savant fou du nom de Docteur Krüel nous a kidnappé pour faire ses expériences démoniaques.</p>
+          <p>Pitié, venez nous sauver.</p>
+          <p>Nous avons réussi à laisser des indices pour vous permettre de nous sauver.</p>
+          <p>Vous n'avez que 60 minutes sinon, nous n'existerons plus.</p>
+          <p>Merci et bonne chance</p>
+          <p>Plumo, Jujube, Kiki, Sonette, Funky, Crokou, et Tousfus</p>
+      </div>
+      <form>
+        <input type="submit" @click=${this.suite} value="Commencer">
+      </form>
+    `
   }
 
   suite () {
-    const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'chien') {
-      document.location = '#my-mission2'
-    } else {
-      // alert('Pénalité : -2 min')
-    }
+    document.location = '#my-mission1'
   }
 
   constructor () {

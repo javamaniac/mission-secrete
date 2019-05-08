@@ -1,11 +1,7 @@
 // plugin : lit-html, es6-string-css
 
-// Import the LitElement base class and html helper function
 import { LitElement, html, css } from 'lit-element'
 import { cssCommun } from './cssCommun'
-// import { css } from 'lit-element'
-
-// import { LitElement, html } from '@polymer/lit-element';
 
 
 const styles = css`

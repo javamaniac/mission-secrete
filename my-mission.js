@@ -2,6 +2,7 @@
 
 // Import the LitElement base class and html helper function
 import { LitElement, html, css } from 'lit-element'
+import { } from './my-mission-0'
 import { } from './my-mission-1'
 import { } from './my-mission-2'
 import { } from './my-mission-3'
@@ -29,14 +30,6 @@ class MyMission extends LitElement {
     <h3>Temps restant : ${this.temps}</h3>
     
     <section></section>
-
-     <div>
-      <a href="#my-mission1">Étape 1</a>
-      <a href="#my-mission2">Étape 2</a>
-      <a href="#my-mission3">Étape 3</a>
-      <a href="#my-mission4">Étape 4</a>
-     </div>
-
     `
   }
 
