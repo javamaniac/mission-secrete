@@ -11,36 +11,36 @@ const styles = css`
   }
 `
 
-class MyMission2 extends LitElement {
+class MyMission6 extends LitElement {
   render () {
     if (this.code === 1) {
       return html`
       `
     } else if (this.code === 'succes') {
       return html`
-        <h1>Impressionant!</h1>
-        <div>
-          La victime #2 est un poulain emprisonné dans un lieu avec des vélos.
-        </div>
-        <form>
+      <h1>Bien joué!</h1>
+      <div>
+        La victime #5 est un serpent qui peut faire peur au postier.
+      </div>
+      <form>
           Code pour la suite <input type="text">
           <input type="submit" @click=${this.suite} value="Valider">
-        </form>
+        </form>      
       `
     } else {
       return html`
-        <h1>Mission 2</h1>
-        <h2>Vous devez résoudre ce calcul</h2>
-        <p>
-     <div>8 x 7 = ?</div>
-     <div>9 x 6 = ?</div>
-     <div>7 x 3 = ?</div>
-     <div>4 x 4 = ?</div>
-     <div></div>
-     <p>Quel est la somme des réponses?</p>
-    </p>
+        <h1>Mission 4</h1>
+        <div>
+            <p>Mettre dans l’ordre d’invention</p>
+
+<div>1 - Le conte de Blanche Neige</div>
+<div>2 - Le conte de Cendrillon</div>
+<div>3 - Alice au pays des Merveilles</div>
+<div>4 - La Fable Le Corbeau et le renard</div>
+
+        </div>
         <form>
-          Réponse <input type="number">
+          Réponse <input type="text">
           <input type="submit" @click=${this.validerReponse} value="Valider">
         </form>
       `
@@ -49,7 +49,7 @@ class MyMission2 extends LitElement {
 
   validerReponse () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === '147') {
+    if (value.toLocaleLowerCase().trim() === '4213') {
       this.code = 'succes'
     } else {
       alert('Pénalité : -2 min')
@@ -58,8 +58,8 @@ class MyMission2 extends LitElement {
 
   suite () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'écurie') {
-      document.location = '#my-mission3'
+    if (value.toLocaleLowerCase().trim() === 'souffrance') {
+      document.location = '#my-mission5'
     } else {
       // alert('Pénalité : -2 min')
     }
@@ -97,4 +97,4 @@ class MyMission2 extends LitElement {
 
 /* global customElements */
 // Register the new element with the browser.
-customElements.define('my-mission2', MyMission2)
+customElements.define('my-mission6', MyMission6)

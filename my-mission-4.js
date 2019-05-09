@@ -20,7 +20,7 @@ class MyMission4 extends LitElement {
       return html`
       <h1>Bien joué!</h1>
       <div>
-        La victime #5 est un serpent qui peut faire peur au postier.
+        La victime #5 est un hamster se trouvant justement dans un coffre à gants.
       </div>
       <form>
           Code pour la suite <input type="text">
@@ -30,14 +30,15 @@ class MyMission4 extends LitElement {
     } else {
       return html`
         <h1>Mission 4</h1>
+        <h2>Décryptez ce message en code morse</h2>
         <div>
-            <p>Mettre dans l’ordre d’invention</p>
+        <pre style="font-size: 1.6rem;">
+− • − •   − − −   • • − •   • • − •   • − •   •
 
-<div>1 - Le conte de Blanche Neige</div>
-<div>2 - Le conte de Cendrillon</div>
-<div>3 - Alice au pays des Merveilles</div>
-<div>4 - La Fable Le Corbeau et le renard</div>
+• −
 
+− − •   • −   − •   −   • • •
+        </pre>
         </div>
         <form>
           Réponse <input type="text">
@@ -49,7 +50,12 @@ class MyMission4 extends LitElement {
 
   validerReponse () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === '4213') {
+    let mot = value.toLocaleLowerCase().trim()
+      .replace('à', 'a')
+      .replace('â', 'a')
+      .replace('  ', ' ')
+      .replace('-', ' ')
+    if (mot === 'coffre a gants') {
       this.code = 'succes'
     } else {
       alert('Pénalité : -2 min')
@@ -58,7 +64,7 @@ class MyMission4 extends LitElement {
 
   suite () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'souffrance') {
+    if (value.toLocaleLowerCase().trim() === 'tunnel') {
       document.location = '#my-mission5'
     } else {
       // alert('Pénalité : -2 min')

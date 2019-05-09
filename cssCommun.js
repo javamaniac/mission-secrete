@@ -6,9 +6,16 @@ export const cssCommun = css`
   background: url(images/parchemin2.jpg);
   background-size: cover;
   padding: 50px 90px;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 h1 {
     margin: 0;
+    font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+  margin: 10px 0;
 }
 form {
     margin: 20px 0;

@@ -9,23 +9,17 @@ const styles = css`
   }
 `
 
-class MyMission0 extends LitElement {
+class MyFin extends LitElement {
   render () {
     return html`
       <h1></h1>
       <div>
-          <h1>À l'aide!</h1>
-          <img src="images/savantFou.png" align="right">
-          <p>Un savant fou du nom de Docteur Krüel nous a kidnappés pour faire ses expériences démoniaques.</p>
-          <p>Pitié, venez nous sauver.</p>
-          <p>Nous avons réussi à laisser des indices pour vous permettre de nous sauver.</p>
-          <p>Vous n'avez que 90 minutes sinon, nous serons découpés en morceaux.</p>
-          <p>Merci et bonne chance</p>
+          <h1>Félicitations!</h1>
+          <!-- <img src="images/savantFou.png" align="right"> -->
+          <p>Vous avez réussi à nous sauver!!!!.</p>
+          <p>Merci</p>
           <p>Plumo, Jujube, Kiki, Sonette, Funky, Crokou, et Tousfus</p>
       </div>
-      <form>
-        <input type="submit" @click=${this.suite} value="Commencer">
-      </form>
     `
   }
 
@@ -65,4 +59,4 @@ class MyMission0 extends LitElement {
 
 /* global customElements */
 // Register the new element with the browser.
-customElements.define('my-mission0', MyMission0)
+customElements.define('my-fin', MyFin)

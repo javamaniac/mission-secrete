@@ -20,7 +20,7 @@ class MyMission6 extends LitElement {
       return html`
       <h1>Bien joué!</h1>
       <div>
-        La victime #5 est un serpent qui peut faire peur au postier.
+        La victime #6 est un serpent qui peut faire peur au postier.
       </div>
       <form>
           Code pour la suite <input type="text">
@@ -29,7 +29,7 @@ class MyMission6 extends LitElement {
       `
     } else {
       return html`
-        <h1>Mission 4</h1>
+        <h1>Mission 6</h1>
         <div>
             <p>Mettre dans l’ordre d’invention</p>
 
@@ -40,7 +40,7 @@ class MyMission6 extends LitElement {
 
         </div>
         <form>
-          Réponse <input type="text">
+          Réponse <input type="number">
           <input type="submit" @click=${this.validerReponse} value="Valider">
         </form>
       `
@@ -58,8 +58,8 @@ class MyMission6 extends LitElement {
 
   suite () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'souffrance') {
-      document.location = '#my-mission5'
+    if (value.toLocaleLowerCase().trim() === 'cobra') {
+      document.location = '#my-mission7'
     } else {
       // alert('Pénalité : -2 min')
     }

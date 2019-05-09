@@ -3,7 +3,6 @@
 import { LitElement, html, css } from 'lit-element'
 import { cssCommun } from './cssCommun'
 
-
 const styles = css`
   ${cssCommun}
   :host {
@@ -29,6 +28,7 @@ class MyMission1 extends LitElement {
     } else {
       return html`
         <h1>Mission 1</h1>
+        <h2>Répondez à cette charade</h2>
         <div>
             <p>Mon premier est le dernier mot du nom du célèbre hors-la-loi. Son nom commence par “Billy The ___”.</p>
             <p>Mon second est la traduction du mot sieste en anglais.</p>
@@ -54,7 +54,7 @@ class MyMission1 extends LitElement {
 
   suite () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'chien') {
+    if (value.toLocaleLowerCase().trim() === 'plume') {
       document.location = '#my-mission2'
     } else {
       // alert('Pénalité : -2 min')

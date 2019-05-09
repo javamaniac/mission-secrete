@@ -18,24 +18,23 @@ class MyMission3 extends LitElement {
       `
     } else if (this.code === 'succes') {
       return html`
-      <h1>Bien joué!</h1>
-      <div>
-        La victime #3 se trouve justement dans ce masque.
-      </div>
-      <form>
+        <h1>Impressionant!</h1>
+        <div>
+        La victime #4 est un singe qui est pétrifié de froid dans la cuisine.
+        </div>
+        <form>
           Code pour la suite <input type="text">
           <input type="submit" @click=${this.suite} value="Valider">
-        </form>      
+        </form>
       `
     } else {
       return html`
         <h1>Mission 3</h1>
-        <div>
-            <p>− −   • −   • • •   − − • −   • • −   • </p>
-            <p> • −   • • − •   • − •   • •   − • − •   • −   • •   − •  </p>
-        </div>
+        <h2>Question d'observation</h2>
+        <div><img src="images/triangles.png" style="width: 30%;"></div>
+        <p>Combien y a-t-il de triangles?</p>
         <form>
-          Réponse <input type="text">
+          Réponse <input type="number">
           <input type="submit" @click=${this.validerReponse} value="Valider">
         </form>
       `
@@ -44,7 +43,7 @@ class MyMission3 extends LitElement {
 
   validerReponse () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'masque africain') {
+    if (value.toLocaleLowerCase().trim() === '12') {
       this.code = 'succes'
     } else {
       alert('Pénalité : -2 min')
@@ -53,7 +52,7 @@ class MyMission3 extends LitElement {
 
   suite () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'épée') {
+    if (value.toLocaleLowerCase().trim() === 'banane') {
       document.location = '#my-mission4'
     } else {
       // alert('Pénalité : -2 min')

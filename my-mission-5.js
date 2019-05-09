@@ -18,32 +18,25 @@ class MyMission5 extends LitElement {
       `
     } else if (this.code === 'succes') {
       return html`
-      <h1>Très fort!</h1>
-      <div>
-        La victime #6 est un singe qui est pétrifié de froid dans la cuisine.
-
-      </div>
-      <form>
+        <h1>Impressionant!</h1>
+        <div>
+        La victime #5 est un chaton pris dans un masque africain.
+        </div>
+        <form>
           Code pour la suite <input type="text">
           <input type="submit" @click=${this.suite} value="Valider">
-        </form>      
+        </form>
       `
     } else {
       return html`
         <h1>Mission 5</h1>
-        <div>
-            <p>Si on brasse tous ces dés, et qu’on fait la somme des dés...</p>
-
-          <p>Quel est le plus petit nombre qu’on peut obtenir?</p>
-          <p>Quel est le plus grand nombre qu’on peut obtenir?</p>
-
-        </div>
+        <h2>Défi physique</h2>
+        <img src="images/basket.png" align="right" style="width: 20%;">
+        <p>À tour de rôle vous devez tenter de lancer le ballon de basketball
+          dans le panier jusqu'à ce que la somme de vos paniers soit 30.
+        </p>
         <form>
-        <p>Réponse </p>
-        Plus petit nombre :
-          <input type="text" id="petit">
-          Plus grand nombre :
-          <input type="text" id="grand">
+          Code de l'arbitre <input type="number">
           <input type="submit" @click=${this.validerReponse} value="Valider">
         </form>
       `
@@ -51,10 +44,8 @@ class MyMission5 extends LitElement {
   }
 
   validerReponse () {
-    const petit = this.shadowRoot.querySelector('input#petit').value
-    const grand = this.shadowRoot.querySelector('input#grand').value
-    if (petit.toLocaleLowerCase().trim() === '21' &&
-      grand.toLocaleLowerCase().trim() === '232' ) {
+    const value = this.shadowRoot.querySelector('input').value
+    if (value.toLocaleLowerCase().trim() === '2365') {
       this.code = 'succes'
     } else {
       alert('Pénalité : -2 min')
@@ -63,7 +54,7 @@ class MyMission5 extends LitElement {
 
   suite () {
     const value = this.shadowRoot.querySelector('input').value
-    if (value.toLocaleLowerCase().trim() === 'frigorifié') {
+    if (value.toLocaleLowerCase().trim() === 'moustache') {
       document.location = '#my-mission6'
     } else {
       // alert('Pénalité : -2 min')

@@ -9,6 +9,8 @@ import { } from './my-mission-3'
 import { } from './my-mission-4'
 import { } from './my-mission-5'
 import { } from './my-mission-6'
+import { } from './my-mission-7'
+import { } from './my-fin'
 
 const styles = css`
 :host {
@@ -17,6 +19,10 @@ const styles = css`
 h3 {
   text-align: center;
   margin: 0;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2rem;
 }
 
 `
@@ -55,7 +61,8 @@ class MyMission extends LitElement {
       this.displayCode = hash.substring(1)
     }
 
-    this.shadowRoot.querySelector('section').innerHTML = `<h1><${this.displayCode}></${this.displayCode}></h1>`
+    this.shadowRoot.querySelector('section').innerHTML = `<${this.displayCode}></${this.displayCode}>`
+    window.scrollTo(0, 0)
   }
 
   firstUpdated (changedProperties) {
@@ -63,13 +70,13 @@ class MyMission extends LitElement {
   }
 
   init () {
-    const DELAIS = 60 * 60 * 1000
+    const DELAIS = 90 * 60 * 1000
 
     this.onHashChange()
 
     /* global localStorage */
     const dateInit = localStorage.getItem('tempInit')
-    if (dateInit) {
+    if (dateInit && document.location.hash !== '#my-mission0') {
       this.dateInit = new Date(dateInit)
     } else {
       this.dateInit = new Date(new Date().getTime() + DELAIS)
